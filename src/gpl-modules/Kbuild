@@ -1,0 +1,4 @@
+obj-y := systems/bde/linux/kernel/
+obj-y += systems/bde/linux/user/kernel/
+obj-y += systems/linux/kernel/modules/bcm-knet/
+obj-y += systems/linux/kernel/modules/knet-cb/
