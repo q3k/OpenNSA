@@ -14,6 +14,11 @@ is openly available for programming Broadcom network switch silicon based
 platforms. These APIs enable development of networking application
 software based on Broadcom network switch architecture based platforms.
 
+Building
+--------
+
+For unofficial (but working!) build instructions, see `src/gpl-modules/README.md`.
+
 Migration from OpenNsl
 ======================
 This software package is replacing the OpenNSL (https://github.com/Broadcom-Switch/OpenNSL) software package.  OpenNSL users are encouraged to migrate this release by replacing all OpenNSL API calls with bcm_xxx API calls in their application and use the new opensoc APIs for soc and SDK layer initialization.
