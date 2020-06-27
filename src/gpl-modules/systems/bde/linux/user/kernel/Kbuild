@@ -1,0 +1,11 @@
+ifeq ($(BCMSDK),)
+$(error BCMSDK must be set to the root of the OpenNSA source tree)
+endif
+
+obj-m := bcm-user-bde.o
+bcm-user-bde-y := linux-user-bde.o
+bcm-user-bde-y += ../../../../linux/kernel/modules/shared/gmodule.o
+ccflags-y := -I$(BCMSDK)/src/gpl-modules/systems/linux/kernel/modules/include/
+ccflags-y += -I$(BCMSDK)/src/gpl-modules/systems/bde/linux/include/
+ccflags-y += -I$(BCMSDK)/src/gpl-modules/systems/bde/shared/include/
+ccflags-y += -I$(BCMSDK)/src/gpl-modules/include/
