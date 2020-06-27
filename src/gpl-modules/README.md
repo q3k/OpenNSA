@@ -10,9 +10,12 @@ We had to rename some modules around as there were some naming collision with
 source code files. A list of modules, their (presumed) purpose, and original
 names is available below.
 
-To build against a Linux source tree, run:
+For example, to build against a Linux source tree, run:
 
-    make -C path/to/linux M=path/to/OpenNSA/src/gpl-modules/ BCMSDK=path/to/OpenNSA modules
+    make -C path/to/linux M=path/to/OpenNSA/src/gpl-modules/ modules
+
+If you're doing something weird and M is not pointing at `gpl-modules`, you'll
+have to also set BCMSDK to point there (`OpenNSA/src/gpl-modules`) instead.
 
 You'll then have a bunch of .ko's lying around. You can use `modules_install`
 to install them into a module directory (by default into `/lib`, but that can

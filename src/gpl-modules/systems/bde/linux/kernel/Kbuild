@@ -1,5 +1,9 @@
 ifeq ($(BCMSDK),)
-$(error BCMSDK must be set to the root of the OpenNSA source tree)
+ifneq ($(M),)
+BCMSDK := $(M)
+else
+$(error BCMSDK must be set to the OpenNSA/src/gpl-modules tree)
+endif
 endif
 
 obj-m := bcm-kernel-bde.o
@@ -11,7 +15,7 @@ bcm-kernel-bde-y += ../../shared/shbde_iproc.o
 bcm-kernel-bde-y += ../../shared/shbde_mdio.o
 bcm-kernel-bde-y += ../../shared/shbde_pci.o
 bcm-kernel-bde-y += ../../../linux/kernel/modules/shared/gmodule.o
-ccflags-y := -I$(BCMSDK)/src/gpl-modules/systems/linux/kernel/modules/include/
-ccflags-y += -I$(BCMSDK)/src/gpl-modules/systems/bde/linux/include/
-ccflags-y += -I$(BCMSDK)/src/gpl-modules/systems/bde/shared/include/
-ccflags-y += -I$(BCMSDK)/src/gpl-modules/include/
+ccflags-y := -I$(BCMSDK)/systems/linux/kernel/modules/include/
+ccflags-y += -I$(BCMSDK)/systems/bde/linux/include/
+ccflags-y += -I$(BCMSDK)/systems/bde/shared/include/
+ccflags-y += -I$(BCMSDK)/include/
