@@ -101,7 +101,7 @@ MODULE_LICENSE("GPL");
 #define HX5_INTC_INTR_STATUS_BASE          (HX5_INTC_INTR_STATUS_REG0)
 #define HX5_INTC_INTR_RAW_STATUS_BASE      (HX5_INTC_INTR_RAW_STATUS_REG0)
 
-#define IOREMAP(addr, size)                ioremap_nocache(addr, size)
+#define IOREMAP(addr, size)                ioremap(addr, size)
 
 #define HX5_IHOST_GICD_ISENABLERN_0        (0x10781100)
 #define HX5_IHOST_GICD_ISENABLERN_1        (0x10781104)
